@@ -38,9 +38,7 @@ var guessesRemainingControl = false;
 guess = "";
 wrongGuesses = "";
 correctletters = "";
-
-//FIX 
-
+ 
 document.onkeyup = function(event) {
     var guess = event.key;
     console.log("letter guessed: " + guess);
@@ -93,31 +91,50 @@ if (guessesRemainingControl == false && wrongGuesses.indexOf(guess) === -1)  {
 } 
 }
 
-//Checking for Losses
-
-
-/*Issues remaining, taking out guesses that are correct
-    1. The correct letter won't display on the screen until another button is pushed.
-    2. Cannot get it to only take away guess chances on incorrect guesses.
-    3. Have to figure out how to check for wins
-    5. Need to disply wins
-    7. Need to reset the game
-    8. Need to design the bootstrap to make it look pretty
-*/
-
-
 //Checking for Wins
 
 function checkForWins (){    
     if (correctletters == generatedword) {
         alert("youve won");
         wins++;  
-        console.log("you've won");}
+        console.log("you've won");}          
 }    
 
+//Checking for Losses
 function checkForLosses() {
     if(numberOfGuessesRemaining === 0) {
         alert("You've Lost")
         losses++;
+        resetgame();
     }
 }
+//Reseting the game
+function resetgame() {
+    numberOfGuessesRemaining = 12;
+    generatedword = "";
+    wrongGuesses = "";
+    blankletters = [];
+    guess = "";
+
+  // This is copied and pasted for the initial code up above   
+    //Picking a new word
+    generatedword = words[Math.floor(Math.random() * words.length )].toLowerCase();
+    
+    //getting the blanks
+   for (i=0; i< generatedword.length; i++) {
+    //Provides an '_' for every letter in the word
+    blankletters[i] = "_";
+    console.log(blankletters); 
+}
+
+}
+
+
+/*Issues remaining, taking out guesses that are correct
+    1. The correct letter won't display on the screen until another button is pushed.
+    2. Cannot get it to only take away guess chances on incorrect guesses.
+    3. Have to figure out how to check for wins
+    5. Need to display wins
+    7. Need to reset the game for wins
+    8. Need to design the bootstrap to make it look pretty
+*/

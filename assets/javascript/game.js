@@ -94,10 +94,10 @@ if (guessesRemainingControl == false && wrongGuesses.indexOf(guess) === -1)  {
 //Checking for Wins
 
 function checkForWins (){    
-    if (correctletters == generatedword) {
+    if (blankletters.join('') === generatedword) {
         alert("youve won");
         wins++;  
-        console.log("you've won");}          
+        console.log("you've won");}                  
 }    
 
 //Checking for Losses
@@ -133,8 +133,6 @@ function resetgame() {
 /*Issues remaining, taking out guesses that are correct
     1. The correct letter won't display on the screen until another button is pushed.
     2. Cannot get it to only take away guess chances on incorrect guesses.
-    3. Have to figure out how to check for wins
-    5. Need to display wins
     7. Need to reset the game for wins
     8. Need to design the bootstrap to make it look pretty
 */

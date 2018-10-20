@@ -37,11 +37,11 @@ var guessesRemainingControl = false;
 /* Make a variable to store guesses */
 guess = "";
 wrongGuesses = "";
-correctletters = "";
+
  
 document.onkeyup = function(event) {
     var guess = event.key;
-    console.log("letter guessed: " + guess);
+    console.log("letter guessed: " + guess); 
 
     
 //Step 3, Going thru each letter of the word, one by one
@@ -49,18 +49,14 @@ for (var j = 0; j < generatedword.length; j++) {
 //if it matches, it shows.     
 if (generatedword[j] === guess) {
     blankletters[j] = guess;
-    // store the correct letters into a variable; correctletters = blankletters[j];
-    correctletters += blankletters[j];
-    console.log("CORRECT LETTERS:  " + correctletters);
-    console.log("BLANK LETTERS: " + blankletters);
     guessesRemainingControl = true;
-    console.log(guessesRemainingControl);
     checkForWins();
         
     
 } else {
     guessesRemainingControl = false; 
 }
+
 
    //number of guesses decreases by 1
 if (guessesRemainingControl == false && wrongGuesses.indexOf(guess) === -1)  {
@@ -89,7 +85,7 @@ if (guessesRemainingControl == false && wrongGuesses.indexOf(guess) === -1)  {
  document.getElementById("guessed-letters").textContent = wrongGuesses;
 }
 } 
-}
+} 
 
 //Checking for Wins
 

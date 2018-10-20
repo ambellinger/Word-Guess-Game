@@ -68,27 +68,30 @@ if (generatedword[j] === guess) {
 if (guessesRemainingControl == false && wrongGuesses.indexOf(guess) === -1)  {
     wrongGuesses += guess + "  ",
     numberOfGuessesRemaining--;
+    checkForLosses();
     console.log("wrong guesses: " + wrongGuesses)
     console.log("number of Guesses Remaining" + numberOfGuessesRemaining)
 
 
  //Display
- console.log("new gen word: " + correctletters)
+
+ //Shows the wins
+ document.getElementById("showWins").textContent = wins;
+
+ //Shows the losses
+ document.getElementById("showLosses").textContent = losses;
+
+ //Shows the current word with the "_"s for the blank letters
  document.getElementById("current-word").textContent = blankletters;
- //the number of remaining guesses will decrement if it is the wrong letter key pressed.
- // and will display in the guesses-remaining div
+
+ //Shows the number of guesses remaining
  document.getElementById("guesses-remaining").textContent = numberOfGuessesRemaining;
 
- //the wrong letter guess will be display  in the guessed-letters div.
+ //Shows the letters guessed 
  document.getElementById("guessed-letters").textContent = wrongGuesses;
 }
 } 
 }
-
-//Checking for Wins
- //everytime if a letter is pressed, it checks for wins and displays the total wins
-
- 
 
 //Checking for Losses
 
@@ -97,20 +100,24 @@ if (guessesRemainingControl == false && wrongGuesses.indexOf(guess) === -1)  {
     1. The correct letter won't display on the screen until another button is pushed.
     2. Cannot get it to only take away guess chances on incorrect guesses.
     3. Have to figure out how to check for wins
-    4. Have to figure out how to check for losses.
-    
+    5. Need to disply wins
+    7. Need to reset the game
+    8. Need to design the bootstrap to make it look pretty
 */
 
 
 //Checking for Wins
 
-function checkForWins (){ 
-   /* for (var i = 0; i < generatedword.length; i++) {
-      
-    } */
-    
+function checkForWins (){    
     if (correctletters == generatedword) {
         alert("youve won");
         wins++;  
         console.log("you've won");}
 }    
+
+function checkForLosses() {
+    if(numberOfGuessesRemaining === 0) {
+        alert("You've Lost")
+        losses++;
+    }
+}

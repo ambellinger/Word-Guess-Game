@@ -43,19 +43,22 @@ correctletters = "";
 
 document.onkeyup = function(event) {
     var guess = event.key;
-    console.log("letter guessed: " + guess); 
+    console.log("letter guessed: " + guess);
+
     
 //Step 3, Going thru each letter of the word, one by one
-for (var j = 0; j < generatedword.length; j++) {        
+for (var j = 0; j < generatedword.length; j++) {      
 //if it matches, it shows.     
 if (generatedword[j] === guess) {
     blankletters[j] = guess;
     // store the correct letters into a variable; correctletters = blankletters[j];
-    correctletters = blankletters[j];
+    correctletters += blankletters[j];
     console.log("CORRECT LETTERS:  " + correctletters);
     console.log("BLANK LETTERS: " + blankletters);
     guessesRemainingControl = true;
-    console.log(guessesRemainingControl);    
+    console.log(guessesRemainingControl);
+    checkForWins();
+        
     
 } else {
     guessesRemainingControl = false; 
@@ -81,42 +84,33 @@ if (guessesRemainingControl == false && wrongGuesses.indexOf(guess) === -1)  {
 }
 } 
 }
- console.log("kokobutter");
 
- //display incorrect letter
- 
- /* document.getElementById("guessed-letters").textContent = generatedword;
- console.log("new gen word: " + generatedword)
- document.getElementById("current-word").textContent = blankletters.join(correctletters);
- //the number of remaining guesses will decrement if it is the wrong letter key pressed.
- // and will display in the guesses-remaining div
- document.getElementById("guesses-remaining").textContent = numberOfGuessesRemaining;
-
- //the wrong letter guess will be display  in the guessed-letters div.
- document.getElementById("guessed-letters").textContent = wrongGuesses;
-
+//Checking for Wins
  //everytime if a letter is pressed, it checks for wins and displays the total wins
 
- /* var wrongGuesses = document.getElementById("guessed-letters");
- var wrongGuessesList = document.createElement ("div");
-   wrongGuessesList.textContent = wrongGuesses;
-   wrongGuesses.appendChild(wrongGuessesList);
-  console.log(wrongGuesses);
-  console.log(wrongGuessesList); */
- //*LOOK INTO THE LOTTERY CODE*
+ 
 
-console.log("Number of guesses remaining: " + numberOfGuessesRemaining);
+//Checking for Losses
 
 
-//Issues remaining, taking out guesses that are correct
+/*Issues remaining, taking out guesses that are correct
+    1. The correct letter won't display on the screen until another button is pushed.
+    2. Cannot get it to only take away guess chances on incorrect guesses.
+    3. Have to figure out how to check for wins
+    4. Have to figure out how to check for losses.
+    
+*/
+
 
 //Checking for Wins
 
-function checkForWins () {
-    for (var i = 0; i < generatedword.length; i++) {
-        if (blankletters === generatedword) {
-   
+function checkForWins (){ 
+   /* for (var i = 0; i < generatedword.length; i++) {
+      
+    } */
+    
+    if (correctletters == generatedword) {
         alert("youve won");
-        wins++;   
-}
-    } }
+        wins++;  
+        console.log("you've won");}
+}    

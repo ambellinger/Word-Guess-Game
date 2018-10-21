@@ -14,9 +14,8 @@ console.log(words)
 //Create a variable to store the generated word
 var generatedword = "";
 var guess = [];
-var logOfLettersGuessed = [];
 
-//Computer picks randomly from the word bank **might have to multiply by 0 because you're not getting the first letter *make sure to lowercase
+//Computer picks randomly from the word bank **make sure to lowercase
 var generatedword = words[Math.floor(Math.random() * words.length )].toLowerCase();
 console.log(generatedword);
 
@@ -91,10 +90,12 @@ if (guessesRemainingControl == false && wrongGuesses.indexOf(guess) === -1)  {
 
 function checkForWins (){    
     if (blankletters.join('') === generatedword) {
-        alert("youve won");
+        alert("You must have some tricks up your sleeve! You've Won");
         wins++;  
-        console.log("you've won");
+        console.log("You must have some tricks up your sleeve! You've Won");
         resetgame();
+        $("#winloss").html("<img src='https://images.pexels.com/photos/1406351/pexels-photo-1406351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350' />");
+
     }                  
 }    
 
@@ -104,8 +105,13 @@ function checkForLosses() {
         alert("You've Lost")
         losses++;
         resetgame();
+        $("#winloss").html("<img src='https://images.pexels.com/photos/970517/pexels-photo-970517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350' />");
+
+        
+
     }
 }
+
 //Reseting the game
 function resetgame() {
     numberOfGuessesRemaining = 12;
@@ -127,9 +133,13 @@ function resetgame() {
 
 }
 
+function music() {
+    document.getElementById("song").autoplay;
+    
+}
 
-/*Issues remaining, taking out guesses that are correct
-    1. The correct letter won't display on the screen until another button is pushed.
-    2. Cannot get it to only take away guess chances on incorrect guesses.
-    8. Need to design the bootstrap to make it look pretty
+/* Issues remaining: 
+     1. The correct letter won't display on the screen until another button is pushed.
+     2. Cannot get it to only take away guess chances on incorrect guesses.
+     
 */

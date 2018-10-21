@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css?family=Euphoria+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree|Chakra+Petch" rel="stylesheet">
 
+     
+
 </head>
 <!-- during the first time loading the page, the body tag will call the initialize_Game() -->
 <body>
@@ -25,7 +27,7 @@
 
         <div class="row">
             <!-- <div class="col-md-1"></div> -->
-            <div class="col-md-6"><img src="assets/images/blur-book-candle-417049.jpg" class="rounded float-left image" alt="...">​</div>
+            <div class="col-md-6" id=winloss><img src="assets/images/blur-book-candle-417049.jpg" class="rounded float-left image" alt="...">​</div>
             <div class="col-md-6">
 
                 <div id="game-section">
@@ -64,11 +66,16 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12"></div>
+            <div class="col-md-12">  </div>
         </div>
-
+        
+        <footer>
+            <audio controls autoplay>
+                <source src="assets/audio/Haunted_Corpse_-_08_-_The_Vampires_Coffin.mp3"  type="audio/mp3">               
+            </audio>
+        </footer>
     </div>
-
+   
 
 
 <script src="assets/javascript/game.js"></script>

@@ -7,53 +7,68 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess Game</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Euphoria+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree|Chakra+Petch" rel="stylesheet">
 
 </head>
 <!-- during the first time loading the page, the body tag will call the initialize_Game() -->
 <body>
 
-
+    <header><h1>Halloween Hangman</h1></header>
     <div class="container">
+        
+        <div class="row">
+                    <div class="col-md-12"></div>
+                </div>
 
         <div class="row">
-            <div class="col-md-12">
+            <!-- <div class="col-md-1"></div> -->
+            <div class="col-md-6"><img src="assets/images/blur-book-candle-417049.jpg" class="rounded float-left image" alt="...">​</div>
+            <div class="col-md-6">
 
                 <div id="game-section">
-                    <p>Press any key to get started!</p>
+                    <p>Type away--if you dare!</p>
                     <div>
                       <h3 class="section-title">Wins</h3>
                       <!-- The div where our wins will be shown. -->
-                      <div id="showWins"></div>
+                      <div id="showWins">0</div>
                     </div>
 
                     <div>
                         <h3 class="section-title">Losses</h3>
                         <!-- The div where our wins will be shown. -->
-                        <div id="showLosses"></div>
+                        <div id="showLosses">0</div>
                       </div>
                     <div id="current-word-section">
                       <h3 class="section-title">Current Word</h3>
                       <!-- The div where our current word (and guessing progress) will be shown. -->
-                      <div id="current-word"></div>
+                      <div id="current-word">~Think Ghoulish Thoughts~</div>
                     
                     </div>
                     <div id="guesses-remaining-section">
                       <h3 class="section-title">Number of Guesses Remaining</h3>
                       <!-- The div where our remaining guesses will be shown. -->
-                      <div id="guesses-remaining"></div>
+                      <div id="guesses-remaining">12</div>
                     </div>
                     <div id="guessed-letters-section">
                       <h3 class="section-title">Letters Already Guessed</h3>
                       <!-- The div where our guesses letters will be shown. -->
-                      <div id="guessed-letters"></div>
+                      <div id="guessed-letters">*********</div>
                     </div>
                   </div>
                 
             </div>
+            <!-- <div class="col-md-1"></div> -->
+        </div>
+
+        <div class="row">
+            <div class="col-md-12"></div>
         </div>
 
     </div>
+
 
 
 <script src="assets/javascript/game.js"></script>
@@ -62,6 +77,7 @@
 
     <!-- Bootstrap CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
 
 
 </body>
